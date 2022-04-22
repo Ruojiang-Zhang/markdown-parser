@@ -19,11 +19,11 @@ public class MarkdownParse {
             
             
             //System.out.println(markdown.charAt(currentIndex) + currentIndex);
-            //if(currentIndex == -1 || openBracket == -1 || closeBracket == -1 || openParen == -1 || closeParen == -1){
-            //    System.out.println("There is a non-link text in the file. ");
-            //    currentIndex++;
-            //    break;
-            //}
+            if(currentIndex == -1 || openBracket == -1 || closeBracket == -1 || openParen == -1 || closeParen == -1){
+                System.out.println("There is a non-link text in the file. ");
+                currentIndex++;
+                break;
+            }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
