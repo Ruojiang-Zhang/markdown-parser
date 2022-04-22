@@ -16,14 +16,16 @@ public class MarkdownParse {
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
+            
+            
+            //System.out.println(markdown.charAt(currentIndex) + currentIndex);
+            //if(currentIndex == -1 || openBracket == -1 || closeBracket == -1 || openParen == -1 || closeParen == -1){
+            //    System.out.println("There is a non-link text in the file. ");
+            //    currentIndex++;
+            //    break;
+            //}
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
-            System.out.println(markdown.charAt(currentIndex) + currentIndex);
-            System.out.println("ABC");
-            if(currentIndex == -1 || openBracket == -1 || closeBracket == -1 || openParen == -1 || closeParen == -1){
-                System.out.println("There is a non-link text in the file. ");
-                break;
-            }
         }
 
         return toReturn;
